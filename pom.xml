@@ -6,7 +6,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- ── Project identity ── -->
+
     <groupId>com.quoridor</groupId>
     <artifactId>quoridor</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -20,7 +20,7 @@
     </properties>
 
     <dependencies>
-        <!-- JavaFX Controls: Button, Label, ComboBox, etc. -->
+        
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -28,7 +28,7 @@
             <classifier>win</classifier>
         </dependency>
 
-        <!-- JavaFX FXML -->
+        
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
@@ -36,7 +36,7 @@
             <classifier>win</classifier>
         </dependency>
 
-        <!-- JavaFX Graphics (required explicitly on some setups) -->
+      
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics</artifactId>
@@ -44,7 +44,7 @@
             <classifier>win</classifier>
         </dependency>
 
-        <!-- JavaFX Base -->
+       
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-base</artifactId>
@@ -57,7 +57,7 @@
     <build>
         <plugins>
 
-            <!-- JavaFX Maven Plugin -->
+          
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
@@ -65,22 +65,22 @@
                 <configuration>
                     <mainClass>com.quoridor.Main</mainClass>
                     <options>
-                        <!-- Required for Java 17 module system on Windows -->
+                     
                         <option>--add-opens</option>
                         <option>java.base/java.lang=ALL-UNNAMED</option>
                         <option>--add-opens</option>
                         <option>java.base/java.util=ALL-UNNAMED</option>
-                        <!-- Force software rendering pipeline on Windows -->
+                       
                         <option>-Dprism.order=sw</option>
-                        <!-- Disable DPI scaling issues on Windows 11 -->
+                        
                         <option>-Dglass.win.uiScale=1.0</option>
-                        <!-- Force decorated window style -->
+                 
                         <option>-Djavafx.stage.style=DECORATED</option>
                     </options>
                 </configuration>
             </plugin>
 
-            <!-- Compiler plugin: enforce Java 17 -->
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -91,7 +91,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Maven JAR plugin: set main class in manifest -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
